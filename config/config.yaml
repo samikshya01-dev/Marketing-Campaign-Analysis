@@ -1,0 +1,34 @@
+paths:
+  raw_data: "/Users/sam/Downloads/Marketing_Campaign/marketing-campaign-analysis/data/raw"
+  processed_data: "/Users/sam/Downloads/Marketing_Campaign/marketing-campaign-analysis/data/processed"
+  outputs: "/Users/sam/Downloads/Marketing_Campaign/marketing-campaign-analysis/outputs"
+  visualizations: "/Users/sam/Downloads/Marketing_Campaign/marketing-campaign-analysis/outputs/visualizations"
+  reports: "/Users/sam/Downloads/Marketing_Campaign/marketing-campaign-analysis/outputs/reports"
+  dashboards: "/Users/sam/Downloads/Marketing_Campaign/marketing-campaign-analysis/outputs/dashboards"
+
+
+data:
+  date_format: "%Y-%m-%d"
+  campaign_data: "marketing_campaign_raw.csv"
+  customer_data: "customer_data_raw.csv"
+
+model:
+  clustering:
+    n_clusters: 3
+    random_state: 42
+    features:
+      - sessions
+      - pages_per_session
+      - transactions
+      - revenue
+
+metrics:
+  outlier_threshold: 3
+  min_sessions: 1
+  min_revenue: 0
+
+visualization:
+  style: "seaborn"
+  color_palette: "Set2"
+  dpi: 300
+  figure_size: [10, 6]
